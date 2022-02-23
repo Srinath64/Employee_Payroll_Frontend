@@ -15,7 +15,7 @@
     <div class="row-content">
       <label class="label text" for="profile">Profile Image </label>
       <div class="profile-radio-content">
-        <mat-radio-group ngDefaultControl formControlName="profile">
+        <mat-radio-group ngDefaultControl formControlName="profilePic">
           <mat-radio-button class=profile-width id="profile1" name="profile" color="primary" 
            value="../assets/profile-images/Ellipse -1.png" required>
           <img class="profile" id='image1' src="../assets/profile-images/Ellipse -1.png">
@@ -77,13 +77,13 @@
     <!-------Input Date------>
     <div class="row-content">
       <label class="label text" for="startDate"> Start Date </label>
-        <input type="date" name="Date" formControlName="date">
+        <input type="date" name="Date" formControlName="startDate">
     </div>
 
     <!------Input Notes------->
     <div class="row-content">
         <mat-label class="label text" for="notes">Notes:</mat-label>
-        <textarea id="notes" class="input textarea" name="Notes" placeholder="Type your Notes here" style="height:100px;font-family: 'Roboto';"formControlName="notes"></textarea>
+        <textarea id="notes" class="input textarea" name="Notes" placeholder="Type your Notes here" style="height:100px;font-family: 'Roboto';"formControlName="note"></textarea>
     </div>
 
     <div class="buttonParent">

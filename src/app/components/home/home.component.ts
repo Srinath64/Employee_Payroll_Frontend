@@ -6,6 +6,7 @@ import { DataService } from 'src/app/service/data.service';
 
 @Component({
   selector: 'app-home',
+  template: '<app-add [employeeData]="employee"></app-add>',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
@@ -27,9 +28,9 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  remove(id: number): void {
-    console.log(id)
-    this.httpService.deleteEmployeeData(id).subscribe(response => {
+  remove(empId: number): void {
+    console.log(empId)
+    this.httpService.deleteEmployeeData(empId).subscribe(response => {
       console.log(response);
       this.ngOnInit();
     });
@@ -37,12 +38,13 @@ export class HomeComponent implements OnInit {
 
   update(employee: Employee): void {
     this.dataService.changeEmployee(employee);
-    this.router.navigateByUrl('/add' + employee.id);
-    this.httpService.updateEmployeData(employee.id, employee).subscribe(response => {
+    this.router.navigateByUrl('/add/' + employee.empId);
+    this.httpService.updateEmployeData(employee.empId, employee).subscribe(response => {
       console.log(response);
       this.ngOnInit();
     });
   }
+
 
 
 }

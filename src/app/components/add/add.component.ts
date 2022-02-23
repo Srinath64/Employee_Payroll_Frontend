@@ -55,15 +55,15 @@ export class AddComponent implements OnInit {
               private dataService: DataService,
               private router: Router)
                {
-      this.addForm = this.formBuilder.group({
-        name: new FormControl('', [Validators.required, Validators.pattern("^[A-Z][a-zA-Z\\s]{2,}$")]),
-        profile: new FormControl('', [Validators.required]),
-        gender: new FormControl('', [Validators.required]),
-        department: this.formBuilder.array([], [Validators.required]),
-        salary: new FormControl('', [Validators.required]),
-        date: new FormControl('', [Validators.required]),
-        notes: new FormControl('', [Validators.required]) 
-      })
+                this.addForm = this.formBuilder.group({
+                  name: new FormControl('', [Validators.required, Validators.pattern("^[A-Z][a-zA-Z\\s]{2,}$")]),
+                  profilePic: new FormControl('', [Validators.required]),
+                  gender: new FormControl('', []),
+                  department: this.formBuilder.array([], []),
+                  salary: new FormControl('', []),
+                  startDate: new FormControl('', []),
+                  note: new FormControl('', []) 
+                })
     }
 
   ngOnInit(): void {
