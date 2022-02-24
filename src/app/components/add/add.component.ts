@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { Employee } from 'src/app/model/employee';
 import { DataService } from 'src/app/service/data.service';
 import { HttpService } from 'src/app/service/http.service';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 
 @Component({
@@ -53,7 +54,8 @@ export class AddComponent implements OnInit {
   constructor(private formBuilder: FormBuilder,
               private httpservice: HttpService,
               private dataService: DataService,
-              private router: Router)
+              private router: Router,
+              private snackBar: MatSnackBar)
                {
                 this.addForm = this.formBuilder.group({
                   name: new FormControl('', [Validators.required, Validators.pattern("^[A-Z][a-zA-Z\\s]{2,}$")]),
@@ -88,6 +90,7 @@ export class AddComponent implements OnInit {
     this.httpservice.addEmployeeData(this.employee).subscribe((response: any) => {
     console.log(response);
     this.router.navigateByUrl("/home");
+    this.snackBar.open('Created Successfully!', 'Dismiss', {duration: 4000, verticalPosition: 'top'});
     });
   }
 

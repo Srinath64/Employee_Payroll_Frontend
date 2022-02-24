@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient} from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -21,12 +21,12 @@ export class HttpService {
     return this.httpClient.post(this.baseUrl + "create", body);
   }
 
-  deleteEmployeeData(id: number): Observable<any> {
-    return this.httpClient.delete(this.baseUrl + "delete/" + id);
+  deleteEmployeeData(empId: number): Observable<any> {
+    return this.httpClient.delete(this.baseUrl + "delete/" + empId);
   }
 
   updateEmployeData(id: number, body: any): Observable<any> {
-    return this.httpClient.put(this.baseUrl + "/update/" + id, body);
+    return this.httpClient.put(this.baseUrl + "update/" + id, body);
   }
  
 }

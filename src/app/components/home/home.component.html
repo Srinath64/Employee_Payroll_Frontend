@@ -32,9 +32,10 @@
           <td>{{employee.salary | currency:'INR'}}</td>
           <td>{{employee.startDate | date: 'dd MMM yyyy'}}</td>
           <td>
-              <img id={{employee.empId}} src="../assets/icons/delete-black-18dp.svg" alt="delete" (click)="remove(employee.empId)">
+              <img id={{employee.employeeId}} src="../assets/icons/delete-black-18dp.svg"
+               alt="delete" (click)="remove(employee.employeeId)">
               &nbsp;
-              <img id={{employee.empId}} src="../assets/icons/create-black-18dp.svg" alt="edit" (click)="update(employee)"> 
+              <img id={{employee.employeeId}} src="../assets/icons/create-black-18dp.svg" alt="edit">   
           </td>
       </tr>
     </table>  

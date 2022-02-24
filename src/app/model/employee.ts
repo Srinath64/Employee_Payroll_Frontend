@@ -1,5 +1,5 @@
 export class Employee {
-  empId!: number;
+  employeeId!: number;
   name!: string;
   department!: string[];
   profilePic!: string;
